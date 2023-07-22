@@ -7,4 +7,23 @@ Git remote add origin https://github.com/BeratGocer/DjangoPropt.git
 Django admin projenin oluşturulması django-admin startproject config .
 
 Git kontrolu git status
-git'e gönderilmek istenmeyenler için .gitignore 
+Git'e gönderilmek istenmeyenler için .gitignore 
+Git ekleme yapmak için git add .
+git commit -m "proje dosyaları oluşturuldu"
+git push origin master
+
+Sanal ortam gözükmüyorsa pipenv --venv / Daha sonrasında dosya yolunu kopyalayıp interpreter kısmına yapıştır
+
+Projenin ayağa kaldırılması için python manage.py runserver
+
+"You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them." Bu bilgilendirme bize eğer djangonun sunduğu applerden yaralanmak istiyorsak migration oluşturmamız gerektiğini söylüyor.
+Migration oluşturmak bu applerin bize tablolarını oluşturacak / kod olarak python manage.py migrate
+
+Super user oluşturmak için python manage.py createsuperuser
+Şifre unutulursa python manage.py changepassword
+
+Django applerinin oluşturulması için python manage.py startapp blog
+admin.py admin panelinin entegrasyonu için
+models.py veri tablolarının işlemleri için
+views.py url'lerin vereceği cevaplar için
