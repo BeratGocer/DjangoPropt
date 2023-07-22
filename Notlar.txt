@@ -1,0 +1,10 @@
+Sanal ortam kurulumu için pipenv install django==3.1.5
+Sanal ortamın çalıştırılması için pipenv shell
+
+Git oluşturulması git init
+Git remote add origin https://github.com/BeratGocer/DjangoPropt.git
+
+Django admin projenin oluşturulması django-admin startproject config .
+
+Git kontrolu git status
+git'e gönderilmek istenmeyenler için .gitignore 
