@@ -27,3 +27,6 @@ Django applerinin oluşturulması için python manage.py startapp blog
 admin.py admin panelinin entegrasyonu için
 models.py veri tablolarının işlemleri için
 views.py url'lerin vereceği cevaplar için
+
+Oluşturulan blog dosyası settings'e yazılır
+Yeni bir Database tablosu oluştururken python manage.py makemigrations
