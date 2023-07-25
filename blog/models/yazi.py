@@ -2,12 +2,13 @@ from django.db import models
 from autoslug import AutoSlugField
 from blog.models import kategoriModel
 from django.contrib.auth.models import User
+from ckeditor.fields import RichTextField
 
 class yaziModel(models.Model):
     resim = models.ImageField(upload_to="yaziResimleri")
     baslik = models.CharField(max_length=50)
-    icerik = models.TextField()
-    olustulumaTarihi = models.DateTimeField(auto_now_add=True)
+    icerik = RichTextField()
+    olusturulmaTarihi = models.DateTimeField(auto_now_add=True)
     duzenlenmeTarihi = models.DateTimeField(auto_now=True)
     slug = AutoSlugField(populate_from = "baslik", unique=True)
     kategoriler = models.ManyToManyField(kategoriModel, related_name="yazi")
@@ -16,4 +17,7 @@ class yaziModel(models.Model):
     class Meta:
         verbose_name = "yazi"
         verbose_name_plural = "yazilar"
-        db_name = "yazi"
+        db_table = "yazi"
+
+    def __str__(self):
+        return self.baslik
