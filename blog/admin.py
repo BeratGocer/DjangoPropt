@@ -6,6 +6,7 @@ from blog.models import (
 admin.site.register(kategoriModel)
 
 
+@admin.register(yaziModel)
 class yaziAdmin(admin.ModelAdmin):
     search_fields = ("baslik", "icerik")
     list_display = (
@@ -13,9 +14,7 @@ class yaziAdmin(admin.ModelAdmin):
     )
 
 
-admin.site.register(yaziModel, yaziAdmin)
-
-
+@admin.register(yorumModel)
 class yorumAdmin(admin.ModelAdmin):
     search_fields = ("yazan__username",)
     list_display = (
@@ -23,14 +22,9 @@ class yorumAdmin(admin.ModelAdmin):
     )
 
 
-admin.site.register(yorumModel, yorumAdmin)
-
-
+@admin.register(IletisimModel)
 class IletisimAdmin(admin.ModelAdmin):
     search_fields = ("email",)
     list_display = (
         "email", "olusturulmaTarihi",
     )
-
-
-admin.site.register(IletisimModel, IletisimAdmin)

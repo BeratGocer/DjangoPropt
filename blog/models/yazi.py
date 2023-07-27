@@ -2,13 +2,12 @@ from django.db import models
 from autoslug import AutoSlugField
 from blog.models import kategoriModel
 from ckeditor.fields import RichTextField
+from blog.abstractModel import DataAbstarctModel
 
-class yaziModel(models.Model):
+class yaziModel(DataAbstarctModel):
     resim = models.ImageField(upload_to="yaziResimleri")
     baslik = models.CharField(max_length=50)
     icerik = RichTextField()
-    olusturulmaTarihi = models.DateTimeField(auto_now_add=True)
-    duzenlenmeTarihi = models.DateTimeField(auto_now=True)
     slug = AutoSlugField(populate_from = "baslik", unique=True)
     kategoriler = models.ManyToManyField(kategoriModel, related_name="yazi")
     yazar = models.ForeignKey("account.customUserModel", on_delete=models.CASCADE, related_name="yazilar")
