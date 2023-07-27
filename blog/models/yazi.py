@@ -1,7 +1,6 @@
 from django.db import models
 from autoslug import AutoSlugField
 from blog.models import kategoriModel
-from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
 
 class yaziModel(models.Model):
@@ -12,7 +11,7 @@ class yaziModel(models.Model):
     duzenlenmeTarihi = models.DateTimeField(auto_now=True)
     slug = AutoSlugField(populate_from = "baslik", unique=True)
     kategoriler = models.ManyToManyField(kategoriModel, related_name="yazi")
-    yazar = models.ForeignKey(User, on_delete=models.CASCADE, related_name="yazilar")
+    yazar = models.ForeignKey("account.customUserModel", on_delete=models.CASCADE, related_name="yazilar")
 
     class Meta:
         verbose_name = "yazi"

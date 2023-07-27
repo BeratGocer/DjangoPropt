@@ -30,3 +30,5 @@ views.py url'lerin vereceği cevaplar için
 
 Oluşturulan blog dosyası settings'e yazılır
 Yeni bir Database tablosu oluştururken python manage.py makemigrations
+
+kullanıcı panelinin özelleştirilebilmesi için python manage.py startapp account
