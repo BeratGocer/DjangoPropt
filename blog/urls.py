@@ -2,6 +2,6 @@ from django.urls import path
 from blog.views import contact, anasayfa
 
 urlpatterns = [
-    path("", anasayfa),
-    path("contact", contact),
+    path("", anasayfa, name="Anasayfa"),
+    path("contact", contact, name="iletisim"),
 ]
