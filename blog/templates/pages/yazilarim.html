@@ -1,31 +1,36 @@
 {% extends 'base.html' %}
 
-{% block title %} Anasayfa {% endblock %}
+{% block title %} {{yazilarim}} {% endblock %}
 
 
 {% block content %}
 
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Başlık</th>
+        <th scope="col">Güncellenme Tarihi</th>
+        <th scope="col">Aksiyonlar</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for yazi in yazilar %}
 
-{% for yazi in yazilar %}
-  <div class="card mb-3">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="{{ yazi.resim.url }}" class="img-fluid rounded-start" alt="..." style="height: 100%; width: 75%;">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">{{ yazi.baslik }}</h5>
-          <p class="card-text">{{ yazi.icerik|safe|truncatechars_html:100 }}</p>
-          <p class="card-text"><small class="text-muted">{{ yazi.olusturulmaTarihi|timesince }} önce paylaşıldı</small></p>
-          <p class="card-text"><small class="text-muted">{{ yazi.duzenlenmeTarihi|timesince }} önce düzenlendi</small></p>
-        </div>
-      </div>
-    </div>
-  </div>
+        <tr>
+            <th scope="row">-</th>
+            <td>{{ yazi.baslik }}</td>
+            <td>{{ yazi.duzenlenmeTarihi }}</td>
+            <td>Çalışılıyor...</td>
+        </tr>
 
-{% empty %}
-<p>Görünüşe bakılırsa daha hiç yazınız yok</p>
-{% endfor %}
+        {% empty %}
+        <p>Görünüşe bakılırsa daha hiç yazınız yok</p>
+        {% endfor %}
+      
+  </table>
+
+
   
 
 
