@@ -10,7 +10,7 @@
   <div class="card mb-3">
     <div class="row g-0">
       <div class="col-md-4">
-        <img src="{{ yazi.resim.url }}" class="img-fluid rounded-start" alt="..." style="height: 100%; width: 75%;">
+        <img src="{{ yazi.resim.url }}" class="img-fluid rounded-start" alt="..." style="height: 100%; width: 100%; object-fit: cover;">
       </div>
       <div class="col-md-8">
         <div class="card-body">
@@ -24,7 +24,10 @@
   </div>
 
 {% empty %}
-<p>Görünüşe bakılırsa daha hiç yazınız yok</p>
+<div class="col-md-6">
+  <img src="https://img.freepik.com/free-vector/curiosity-people-concept-illustration_114360-11034.jpg?w=826&t=st=1690986702~exp=1690987302~hmac=0e70b325c9b0ef3a4ee42ad5af8fe749b3f2d04cfa4ee10abd2170e7eb41f1da" class="img-fluid rounded-start" alt="..." style="height: 100%; width: 100%; object-fit: cover;">
+</div>
+<p>Burada gösterilecek bir şey yok gibi</p>
 {% endfor %}
   
 

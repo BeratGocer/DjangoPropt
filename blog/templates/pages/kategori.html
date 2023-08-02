@@ -10,7 +10,7 @@
   <div class="card mb-3">
     <div class="row g-0">
       <div class="col-md-4">
-        <img src="{{ yazi.resim.url }}" class="img-fluid rounded-start" alt="..." style="height: 100%; width: 75%;">
+        <img src="{{ yazi.resim.url }}" class="img-fluid rounded-start" alt="..." style="height: 100%; width: 100%; object-fit: cover;">
       </div>
       <div class="col-md-8">
         <div class="card-body">
@@ -24,7 +24,7 @@
   </div>
 
 {% empty %}
-<p>Görünüşe bakılırsa daha hiç yazınız yok</p>
+<p>Burada gösterilecek bir şey yok gibi</p>
 {% endfor %}
   
 
