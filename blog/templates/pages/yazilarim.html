@@ -13,13 +13,15 @@
         <th scope="col">Güncellenme Tarihi</th>
         <th scope="col">Aksiyonlar</th>
       </tr>
-    </thead>
+    </thead>{{ yazi.baslik }}
     <tbody>
         {% for yazi in yazilar %}
 
         <tr>
             <th scope="row">-</th>
-            <td>{{ yazi.baslik }}</td>
+            <td>
+              <a href="{% url 'detay' slug=yazi.slug %}">{{ yazi.baslik }}</a>
+            </td>
             <td>{{ yazi.duzenlenmeTarihi }}</td>
             <td>Çalışılıyor...</td>
         </tr>

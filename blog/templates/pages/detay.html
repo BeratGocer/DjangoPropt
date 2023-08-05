@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} {{ yazi.baslik }} {% endblock %}
+
+{% block content%}
+<div class="card mb-3">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{{ yazi.resim.url }}" class="img" alt="..." style="height: 25%; width: 100%; object-fit: cover;">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ yazi.baslik }}</h5>
+          <p class="card-text">{{ yazi.icerik|safe }}</p>
+          <p class="card-text"><small class="text-muted">{{ yazi.olusturulmaTarihi|timesince }} önce paylaşıldı</small></p>
+          <p class="card-text"><small class="text-muted">{{ yazi.duzenlenmeTarihi|timesince }} önce düzenlendi</small></p>
+        </div>
+      </div>
+    </div>
+</div>
+
+<h5>Yorumlar</h5>
+
+
+
+{% for yorum in yorumlar %}
+
+  <div class="card" style="border-radius: 50px;">
+
+    <div class = "card-body" style="display: flex; flex-direction: row;">
+
+        <div>
+            
+            {% if yorum.yazan.avatar %}
+              <img src="{{ yorum.yazan.avatar.url }}" alt="" class="" style="height: 100px; width: 100px; border-radius: 100px;">
+            {% else %}
+              <img src="{% static 'img/user.png' %}" alt="" class="" style="height: 100px; width: 100px; border-radius: 100px; object-fit: cover;">
+            {% endif %}
+              
+        </div>
+        <div>
+            <h5 class="card-title" style="padding-left: 25px;">{{ yorum.yazan.username }}</h5>
+            <p class="card-text" style="padding-left: 25px;">{{ yorum.yorum }}</p>
+        </div>
+
+    </div>
+
+  </div>
+
+{% empty %}
+  <p>Henüz herhangi bir yorum yok...</p>
+{% endfor %}
+    
+
+{% endblock %}
