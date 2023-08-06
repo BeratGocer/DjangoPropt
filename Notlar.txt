@@ -36,3 +36,8 @@ kullanıcı panelinin özelleştirilebilmesi için python manage.py startapp acc
 email = forms.EmailField(label="E-Mail", max_length=100)
     isim_soyisim = forms.CharField(label="İsim-Soyisim", max_length=25)
     mesaj = forms.CharField(label="Mesaj", widget=forms.Textarea)
+
+    iletisim = IletisimModel()
+            iletisim.email = form.cleaned_data['email']
+            iletisim.isim_soyisim = form.cleaned_data['isim_soyisim']
+            iletisim.mesaj = form.cleaned_data['mesaj']
