@@ -23,7 +23,10 @@
               <a href="{% url 'detay' slug=yazi.slug %}">{{ yazi.baslik }}</a>
             </td>
             <td>{{ yazi.duzenlenmeTarihi }}</td>
-            <td>Çalışılıyor...</td>
+            <td>
+              <a class="btn btn-success" href="{% url 'yazi-guncelle' slug=yazi.slug %}" >Düzenle</a>
+              <a class="btn btn-danger" href="{% url 'yazi-sil' slug=yazi.slug %}" >Sil</a>
+            </td>
         </tr>
 
         {% empty %}

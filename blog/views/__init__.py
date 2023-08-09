@@ -5,3 +5,4 @@ from .yazilarim import yazilarim
 from .detay import detay
 from .yaziEkle import yaziEkle
 from .yaziGuncelle import yaziGuncelle
+from .yaziSil import yaziSil

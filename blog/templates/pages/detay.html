@@ -23,6 +23,7 @@
             {% if request.user == yazi.yazar %}
               <p>
                 <a class="btn btn-success" href="{% url 'yazi-guncelle' slug=yazi.slug %}" >Düzenle</a>
+                <a class="btn btn-danger" href="{% url 'yazi-sil' slug=yazi.slug %}" >Sil</a>
               </p>
             {% endif %}
               

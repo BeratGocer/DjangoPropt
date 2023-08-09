@@ -1,5 +1,5 @@
 from django.urls import path
-from blog.views import contact, anasayfa, kategori, yazilarim, detay, yaziEkle, yaziGuncelle
+from blog.views import contact, anasayfa, kategori, yazilarim, detay, yaziEkle, yaziGuncelle, yaziSil
 
 urlpatterns = [
     path("", anasayfa, name="Anasayfa"),
@@ -9,4 +9,5 @@ urlpatterns = [
     path("detay/<slug:slug>", detay, name="detay"),
     path("yazi-ekle", yaziEkle, name="yazi-ekle"),
     path("yazi-guncelle/<slug:slug>", yaziGuncelle, name="yazi-guncelle"),
+    path("yazi-sil/<slug:slug>", yaziSil, name="yazi-sil"),
 ]
