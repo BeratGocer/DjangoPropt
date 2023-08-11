@@ -5,8 +5,14 @@
     
     {% if request.user.is_authenticated %}
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Profil Düzenle</li>
-        <li class="list-group-item">Şifre Değiştir</li>
+
+        <li class="list-group-item">
+          <a href="{% url 'profil-duzenleme' %}">Profil Düzenle</a>
+        </li>
+
+        <li class="list-group-item">
+          <a href="{% url 'sifre-degistirme' %}">Şifre Değiştir</a>
+        </li>
         
         <li class="list-group-item">
           <a href="{% url 'yazi-ekle' %}">Yazı Ekle</a>
@@ -16,12 +22,24 @@
           <a href="{% url 'yazilarim' %} ">Yazılarım</a>
         </li>
 
-        <li class="list-group-item">Çıkış yap</li>
+        <li class="list-group-item">
+          <a href="{% url 'cikis' %} ">Çıkış Yap</a>
+        </li>
       </ul>
     
     {% else %}
+      <ul class="list-group list-group-flush">
 
-      login formu gelecektir.
+        <li class="list-group-item">
+          <a href="{% url 'giris' %} ">Giris Yap</a>
+        </li>
+
+        <li class="list-group-item">
+          <a href="{% url 'kayit' %} "> Kayıt Ol</a>
+        </li>
+
+      </ul>
+      
 
     {% endif %}
       
